@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-alert',
   templateUrl: './alert.page.html',
@@ -36,7 +37,8 @@ export class AlertPage implements OnInit {
         {
           name: 'valor',
           type: 'text',
-          placeholder: 'Ingresa un url'
+          value: 'https://ionicframework.com'
+
         },
         {
           name: 'valor',
@@ -51,13 +53,18 @@ export class AlertPage implements OnInit {
         {
           name: 'valor',
           type: 'text',
-          placeholder: 'Nickname (max 8 caracter)'
+          placeholder: 'Nickname (max 8 caracter)',
+          attributes: {
+            maxlength: 8,
+          },
         },
         {
           name: 'valor',
           type: 'number',
-          placeholder: 'Edad'
-        },
+          placeholder: 'Edad',
+          min: 1,
+          max: 100
+        }
       ],
       buttons: ['OK', 'CANCEL']
     });
